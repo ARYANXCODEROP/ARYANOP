@@ -11,9 +11,9 @@
 
 <p align="center">
 <a href="https://github.com/THEMADMAXPRO/ARYANMUSIC/stargazers"><img src="https://img.shields.io/github/stars/ARYANXCODEROP/ARYANOP?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
-<a href="https://github.com/ARYANXCODEROP/ARYANOP/network/members"> <img src="https://img.shields.io/github/forks/THEMADMAXPRO/ARYANMUSIC?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
+<a href="https://github.com/ARYANXCODEROP/ARYANOP/network/members"> <img src="https://img.shields.io/github/forks/ARYANXCODEROP/ARYANOP?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
 <a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Written%20in-Python-orange?style=for-the-badge&logo=python" alt="Python" /> </a>
-<a href="https://github.com/ARYANXCODEROP/ARYANOP/commits/ARYANXCODEROP"> <img src="https://img.shields.io/github/last-commit/THEMADMAXPRO/ARYANMUSIC?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
+<a href="https://github.com/ARYANXCODEROP/ARYANOP/commits/ARYANXCODEROP"> <img src="https://img.shields.io/github/last-commit/ARYANXCODEROP/ARYANOP?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
 </p>
 
 <p align="center">
