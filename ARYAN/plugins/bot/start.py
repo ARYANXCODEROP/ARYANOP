@@ -84,7 +84,7 @@ async def start_pm(client, message: Message, _):
             keyboard = first_page(_)
             accha = await message.reply_text(
             text=random.choice(EMOJIOS),
-             await asyncio.sleep(2)
+             await asyncio.sleep(2),
              await umm.delete()
              await message.reply_sticker(sticker=random.choice(STICKER))
             return await message.reply_photo(
@@ -141,7 +141,7 @@ async def start_pm(client, message: Message, _):
         out = private_panel(_)
 accha = await message.reply_text(
             text=random.choice(EMOJIOS),
-             await asyncio.sleep(2)
+             await asyncio.sleep(2),
         await umm.delete()
         await message.reply_sticker(sticker=random.choice(STICKER))
         await message.reply_photo(
