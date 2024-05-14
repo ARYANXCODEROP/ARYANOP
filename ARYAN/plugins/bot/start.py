@@ -4,14 +4,13 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
-import asyncio
+
 import config
-from ARYAN import app
-from ARYAN.misc import _boot_
-from ARYAN.plugins.sudo.sudoers import sudoers_list
-from ARYAN.utils import bot_sys_stats
-from ARYAN.utils.database import get_served_chats, get_served_users, get_sudoers
-from ARYAN.utils.database import (
+from AarohiX import app
+from AarohiX.misc import _boot_
+from AarohiX.plugins.sudo.sudoers import sudoers_list
+from AarohiX.utils import bot_sys_stats
+from AarohiX.utils.database import (
     add_served_chat,
     add_served_user,
     blacklisted_chats,
@@ -19,9 +18,9 @@ from ARYAN.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from ARYAN.utils.decorators.language import LanguageStart
-from ARYAN.utils.formatters import get_readable_time
-from ARYAN.utils.inline import first_page, private_panel, start_panel
+from AarohiX.utils.decorators.language import LanguageStart
+from AarohiX.utils.formatters import get_readable_time
+from AarohiX.utils.inline import first_page, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
 
@@ -52,6 +51,7 @@ ARYAN_PICS = [
 ]
 
 
+
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
 async def start_pm(client, message: Message, _):
@@ -60,7 +60,7 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = first_page(_)
-             await message.reply_sticker("CAACAgUAAxkBAAEEaoFmQvmHm8XwyuA9-r4ZQbkQfwFmrwAClAkAAuqHMVbcrC536UP9uTUE"),
+            await message.reply_sticker("CAACAgUAAxkBAAEEaoFmQvmHm8XwyuA9-r4ZQbkQfwFmrwAClAkAAuqHMVbcrC536UP9uTUE")
             return await message.reply_photo(
                 random.choice(ARYAN_PICS),
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
@@ -75,7 +75,7 @@ async def start_pm(client, message: Message, _):
                 )
             return
         if name[0:3] == "inf":
-            m = await message.reply_text("🕊️")
+            m = await message.reply_text("**» sᴇᴀʀᴄʜɪɴɢ ʙᴀʙʏ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ")
             query = (str(name)).replace("info_", "", 1)
             query = f"https://www.youtube.com/watch?v={query}"
             results = VideosSearch(query, limit=1)
@@ -113,9 +113,8 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-        await message.reply_sticker("CAACAgUAAxkBAAEEaoFmQvmHm8XwyuA9-r4ZQbkQfwFmrwAClAkAAuqHMVbcrC536UP9uTUE"),
-       await message.reply_photo(
-            random.choice(ARYAN_PICS),
+        await message.reply_sticker("CAACAgUAAxkBAAEEaoFmQvmHm8XwyuA9-r4ZQbkQfwFmrwAClAkAAuqHMVbcrC536UP9uTUE")
+        await message.reply_photo(random.choice(ARYAN_PICS),
             caption=_["start_2"].format(message.from_user.mention, app.mention),
             reply_markup=InlineKeyboardMarkup(out),
         )
@@ -132,7 +131,7 @@ async def start_gp(client, message: Message, _):
     out = start_panel(_)
     uptime = int(time.time() - _boot_)
     await message.reply_photo(
-        random.choice(ARYAN_PICS),
+        photo=config.START_IMG_URL,
         caption=_["start_1"].format(app.mention, get_readable_time(uptime)),
         reply_markup=InlineKeyboardMarkup(out),
     )
@@ -167,9 +166,9 @@ async def welcome(client, message: Message):
 
                 out = start_panel(_)
                 await message.reply_photo(
-                    random.choice(ARYAN_PICS),
+                    photo=config.START_IMG_URL,
                     caption=_["start_3"].format(
-                        message.from_user.mention,
+                        message.from_user.first_name,
                         app.mention,
                         message.chat.title,
                         app.mention,
@@ -180,4 +179,3 @@ async def welcome(client, message: Message):
                 await message.stop_propagation()
         except Exception as ex:
             print(ex)
-            
