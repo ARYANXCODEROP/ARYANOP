@@ -152,9 +152,7 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-        served_chats = len(await get_served_chats())
-        served_users = len(await get_served_users())
-        UP, CPU, RAM, DISK = await bot_sys_stats()
+        accha = await message.reply_text(
         text=random.choice(EMOJIOS),
             )
             await asyncio.sleep(1.3)
