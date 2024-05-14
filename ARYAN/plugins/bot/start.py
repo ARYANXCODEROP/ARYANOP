@@ -82,7 +82,7 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = first_page(_)
-             await message.reply_sticker(sticker=random.choice(STICKER)),
+             umm = await message.reply_sticker(sticker=random.choice(STICKER))
             return await message.reply_photo(
                 random.choice(ARYAN_PICS),
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
@@ -135,7 +135,7 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-        await message.reply_sticker(sticker=random.choice(STICKER)),
+  umm = await message.reply_sticker(sticker=random.choice(STICKER))
         await message.reply_photo(
             random.choice(ARYAN_PICS),
             caption=_["start_2"].format(message.from_user.mention, app.mention),
