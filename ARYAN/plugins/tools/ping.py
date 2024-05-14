@@ -7,6 +7,7 @@ from pyrogram.types import Message
 from ARYAN import app
 from ARYAN.core.call import ARYAN
 from ARYAN.utils import bot_sys_stats
+from ARYAN.plugins.bot.start import ARYAN_PICS
 from ARYAN.utils.decorators.language import language
 from ARYAN.utils.inline import add_markup
 from config import BANNED_USERS
