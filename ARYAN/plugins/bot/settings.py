@@ -39,7 +39,7 @@ from ARYAN.utils.inline.settings import (
 from ARYAN.utils.inline import source_markup, lood_markup, source1_markup, source2_markup
 from ARYAN.utils.inline.start import private_panel
 from ARYAN.plugins.bot.start import ARYAN_PICS
-from config import BANNED_USERS, OWNER_ID, MUSIC_BOT_NAME, START_IMG_URL, REPO_IMG_URL, LOOD_IMG_URL
+from config import BANNED_USERS, OWNER_ID, MUSIC_BOT_NAME, START_IMG_URL
 
 
 @app.on_message(
