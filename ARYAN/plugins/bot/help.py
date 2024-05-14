@@ -9,7 +9,6 @@ from ARYAN.utils.database import get_lang
 from ARYAN.utils.decorators.language import LanguageStart, languageCB
 from ARYAN.utils.inline.help import help_back_markup, private_help_panel
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
-from ARYAN.plugins.bot.start import ARYAN_PICS
 from strings import get_string, helpers
 from ARYAN.misc import SUDOERS
 
@@ -39,7 +38,7 @@ async def helper_private(client: app, update: Union[types.Message, types.Callbac
         _ = get_string(language)
         keyboard = first_page(_)
         await update.reply_photo(
-            random.choice(ARYAN_PICS),
+            photo=START_IMG_URL,
             caption=_["help_1"].format(SUPPORT_CHAT),
             reply_markup=keyboard,
         )
@@ -65,7 +64,7 @@ async def helper_private(client: app, update: Union[types.Message, types.Callbac
         language = await get_lang(update.chat.id)
         _ = get_string(language)
         keyboard = first_page(_)
-        await update.reply_photo(random.choice(ARYAN_PICS), caption=_["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard)
+        await update.reply_photo(photo=START_IMG_URL, caption=_["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard)
     
 
 
