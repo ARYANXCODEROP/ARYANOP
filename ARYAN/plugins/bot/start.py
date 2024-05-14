@@ -82,6 +82,24 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = first_page(_)
+            accha = await message.reply_text(
+            text=random.choice(EMOJIOS),
+            )
+            await asyncio.sleep(1.3)
+            await accha.edit("25")
+            await asyncio.sleep(0.8)
+            await accha.edit("50")
+            await asyncio.sleep(0.6)
+            await accha.edit("75")
+            await asyncio.sleep(0.4)
+            await accha.edit("75")
+            await asyncio.sleep(0.2)
+            await accha.edit("100")
+            await asyncio.sleep(0.2)
+            await accha.delete()
+            umm = await message.reply_sticker(sticker=random.choice(STICKER))
+            await asyncio.sleep(4)
+            await umm.delete()
             return await message.reply_photo(
                 random.choice(ARYAN_PICS),
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
@@ -134,6 +152,31 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
+        served_chats = len(await get_served_chats())
+        served_users = len(await get_served_users())
+        UP, CPU, RAM, DISK = await bot_sys_stats()
+        text=random.choice(EMOJIOS),
+            )
+            await asyncio.sleep(1.3)
+            await accha.edit("25")
+            await asyncio.sleep(0.8)
+            await accha.edit("50")
+            await asyncio.sleep(0.6)
+            await accha.edit("75")
+            await asyncio.sleep(0.4)
+            await accha.edit("75")
+            await asyncio.sleep(0.2)
+            await accha.edit("100")
+            await asyncio.sleep(0.2)
+            await accha.delete()
+            umm = await message.reply_sticker(sticker=random.choice(STICKER))
+            await asyncio.sleep(4)
+            await umm.delete()
+            return await message.reply_photo(
+                random.choice(ARYAN_PICS),
+                caption=_["help_1"].format(config.SUPPORT_CHAT),
+                reply_markup=keyboard,
+            )
         await message.reply_photo(
             random.choice(ARYAN_PICS),
             caption=_["start_2"].format(message.from_user.mention, app.mention),
