@@ -47,7 +47,22 @@ ARYAN_PICS = [
 "https://telegra.ph/file/ff76608499934576bc029.jpg",
 "https://telegra.ph/file/933679970002374a0dde7.jpg",
 "https://telegra.ph/file/3cd52ef2e99814b29917a.jpg",
-"https://telegra.ph/file/1dc71c11762d4c4193128.jpg"
+"https://telegra.ph/file/1dc71c11762d4c4193128.jpg",
+"https://telegra.ph/file/3d80c1e33dce235713fb0.jpg",
+"https://telegra.ph/file/1736b88587588361b1e10.jpg",
+"https://telegra.ph/file/67ff63f36e95a72d71238.jpg",
+"https://telegra.ph/file/176b1a93bafbdcd479948.jpg",
+"https://telegra.ph/file/53451ea34c47ab7029dc7.jpg",
+"https://telegra.ph/file/02dee651df192da8d5d0e.jpg",
+"https://telegra.ph/file/f7cf21e75a11f1b5d45e0.jpg",
+"https://telegra.ph/file/fad444ab7a3eed9f206f9.jpg",
+"https://telegra.ph/file/a8f5c6470bcf46a82d8ac.jpg",
+"https://telegra.ph/file/36f1c041a0702ebfbd385.jpg",
+"https://telegra.ph/file/ac0d854c411918a66aed7.jpg",
+"https://telegra.ph/file/a3062b9cf388e78958ba3.jpg",
+"https://telegra.ph/file/bb6c79dd3b4e473b68152.jpg",
+"https://telegra.ph/file/03ed2b4852ba47946960e.jpg",
+"https://telegra.ph/file/850b1b9b9ad58efc4edeb.jpg"
 ]
 
 
