@@ -85,8 +85,8 @@ async def start_pm(client, message: Message, _):
             accha = await message.reply_text(
             text=random.choice(EMOJIOS),
              await asyncio.sleep(2),
-             await umm.delete()
-             await message.reply_sticker(sticker=random.choice(STICKER))
+             await umm.delete(),
+             await message.reply_sticker(sticker=random.choice(STICKER)),
             return await message.reply_photo(
                 random.choice(ARYAN_PICS),
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
@@ -142,8 +142,8 @@ async def start_pm(client, message: Message, _):
 accha = await message.reply_text(
             text=random.choice(EMOJIOS),
              await asyncio.sleep(2),
-        await umm.delete()
-        await message.reply_sticker(sticker=random.choice(STICKER))
+        await umm.delete(),
+        await message.reply_sticker(sticker=random.choice(STICKER)),
         await message.reply_photo(
             random.choice(ARYAN_PICS),
             caption=_["start_2"].format(message.from_user.mention, app.mention),
