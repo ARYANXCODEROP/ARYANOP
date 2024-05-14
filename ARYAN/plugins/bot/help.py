@@ -9,6 +9,7 @@ from ARYAN.utils.database import get_lang
 from ARYAN.utils.decorators.language import LanguageStart, languageCB
 from ARYAN.utils.inline.help import help_back_markup, private_help_panel
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
+from ARYAN.plugins.bot.start import ARYAN_PICS
 from strings import get_string, helpers
 from ARYAN.misc import SUDOERS
 
