@@ -82,10 +82,6 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = first_page(_)
-            accha = await message.reply_text(
-            text=random.choice(EMOJIOS),
-             await asyncio.sleep(2),
-             await umm.delete(),
              await message.reply_sticker(sticker=random.choice(STICKER)),
             return await message.reply_photo(
                 random.choice(ARYAN_PICS),
@@ -139,10 +135,6 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-accha = await message.reply_text(
-            text=random.choice(EMOJIOS),
-             await asyncio.sleep(2),
-        await umm.delete(),
         await message.reply_sticker(sticker=random.choice(STICKER)),
         await message.reply_photo(
             random.choice(ARYAN_PICS),
