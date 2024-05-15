@@ -1,14 +1,16 @@
 import time
-import random
+import random 
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
-
+import asyncio
 import config
 from ARYAN import app
 from ARYAN.misc import _boot_
 from ARYAN.plugins.sudo.sudoers import sudoers_list
+from ARYAN.aryan import EMOJIOS, STICKER
+from ARYAN.utils.database import get_served_chats, get_served_users, get_sudoers
 from ARYAN.utils import bot_sys_stats
 from ARYAN.utils.database import (
     add_served_chat,
@@ -23,6 +25,7 @@ from ARYAN.utils.formatters import get_readable_time
 from ARYAN.utils.inline import first_page, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
+
 
 
 ARYAN_PICS = [
@@ -66,7 +69,6 @@ ARYAN_PICS = [
 ]
 
 
-
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
 async def start_pm(client, message: Message, _):
@@ -75,7 +77,20 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = first_page(_)
-            await message.reply_sticker("CAACAgUAAxkBAAEEaoFmQvmHm8XwyuA9-r4ZQbkQfwFmrwAClAkAAuqHMVbcrC536UP9uTUE")
+            accha = await message.reply_text(
+            text=random.choice(EMOJIOS),
+            )
+            await asyncio.sleep(1.3)
+            await accha.edit("ᴅιиg ᴅσиg ꨄ︎ ѕтαятιиg.....")
+            await asyncio.sleep(0.2)
+            await accha.edit("ᴅιиg ᴅσиg ꨄ sтαятιиg.........")
+            await asyncio.sleep(0.2)
+            await accha.edit("ᴅιиg ᴅσиg ꨄ︎ sтαятιиg.....")
+            await asyncio.sleep(0.2)
+            await accha.delete()
+            umm = await message.reply_sticker(sticker=random.choice(STICKER))
+            await asyncio.sleep(2)
+            await umm.delete()
             return await message.reply_photo(
                 random.choice(ARYAN_PICS),
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
@@ -89,8 +104,18 @@ async def start_pm(client, message: Message, _):
                     text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <b>sᴜᴅᴏʟɪsᴛ</b>.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
                 )
             return
+        if name == "verify":
+            await message.reply_text(f"ʜᴇʏ {message.from_user.first_name},\nᴛʜᴀɴᴋs ғᴏʀ ᴠᴇʀɪғʏɪɴɢ ʏᴏᴜʀsᴇʟғ ɪɴ ˹𝐓𝐚𝐫𝐠𝐞𝐭 ✘ 𝐇𝐢𝐭˼, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ sᴛᴀʀᴛ ᴜsɪɴɢ ᴍᴇ.")
+            if await is_on_off(2):
+                sender_id = message.from_user.id
+                sender_name = message.from_user.first_name
+                return await bot.send_message(
+                    config.LOG_GROUP_ID,
+                    f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ <code>ᴠᴇʀɪғʏ ʜɪᴍsᴇʟғ</code>\n\n**ᴜsᴇʀ ɪᴅ:** {sender_id}\n**ᴜsᴇʀɴᴀᴍᴇ:** {sender_name}",
+                )
+            return    
         if name[0:3] == "inf":
-            m = await message.reply_text("🌿")
+            m = await message.reply_text("🔎")
             query = (str(name)).replace("info_", "", 1)
             query = f"https://www.youtube.com/watch?v={query}"
             results = VideosSearch(query, limit=1)
@@ -128,9 +153,26 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-        await message.reply_sticker("CAACAgUAAxkBAAEEaoFmQvmHm8XwyuA9-r4ZQbkQfwFmrwAClAkAAuqHMVbcrC536UP9uTUE")
-        await message.reply_photo(random.choice(ARYAN_PICS),
-            caption=_["start_2"].format(message.from_user.mention, app.mention),
+        served_chats = len(await get_served_chats())
+        served_users = len(await get_served_users())
+        UP, CPU, RAM, DISK = await bot_sys_stats()
+        accha = await message.reply_text(
+            text=random.choice(EMOJIOS),
+        )
+        await asyncio.sleep(1.3)
+        await accha.edit("ᴅιиg ᴅσиg ꨄ︎ ѕтαятιиg........")
+        await asyncio.sleep(0.2)
+        await accha.edit("ᴅιиg ᴅσиg ꨄ sтαятιиg........")
+        await asyncio.sleep(0.2)
+        await accha.edit("ᴅιиg ᴅσиg ꨄ︎ sтαятιиg......")
+        await asyncio.sleep(0.2)
+        await accha.delete()
+        umm = await message.reply_sticker(sticker=random.choice(STICKER))
+        await asyncio.sleep(2)
+        await umm.delete()
+        await message.reply_photo(
+            random.choice(ARYAN_PICS),
+            caption=_["start_2"].format(message.from_user.mention, app.mention, UP, DISK, CPU, RAM,served_users,served_chats),
             reply_markup=InlineKeyboardMarkup(out),
         )
         if await is_on_off(2):
@@ -146,7 +188,7 @@ async def start_gp(client, message: Message, _):
     out = start_panel(_)
     uptime = int(time.time() - _boot_)
     await message.reply_photo(
-        photo=config.START_IMG_URL,
+        random.choice(ARYAN_PICS),
         caption=_["start_1"].format(app.mention, get_readable_time(uptime)),
         reply_markup=InlineKeyboardMarkup(out),
     )
@@ -181,7 +223,7 @@ async def welcome(client, message: Message):
 
                 out = start_panel(_)
                 await message.reply_photo(
-                    photo=config.START_IMG_URL,
+                    random.choice(ARYAN_PICS),
                     caption=_["start_3"].format(
                         message.from_user.mention,
                         app.mention,
