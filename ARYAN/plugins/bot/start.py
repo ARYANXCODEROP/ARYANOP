@@ -90,7 +90,7 @@ async def start_pm(client, message: Message, _):
                 )
             return
         if name[0:3] == "inf":
-            m = await message.reply_text("**» sᴇᴀʀᴄʜɪɴɢ ʙᴀʙʏ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ")
+            m = await message.reply_text("🌿")
             query = (str(name)).replace("info_", "", 1)
             query = f"https://www.youtube.com/watch?v={query}"
             results = VideosSearch(query, limit=1)
@@ -183,7 +183,7 @@ async def welcome(client, message: Message):
                 await message.reply_photo(
                     photo=config.START_IMG_URL,
                     caption=_["start_3"].format(
-                        message.from_user.first_name,
+                        message.from_user.mention,
                         app.mention,
                         message.chat.title,
                         app.mention,
