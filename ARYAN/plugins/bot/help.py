@@ -2,14 +2,6 @@ from typing import Union
 import random
 from ARYAN.plugins.bot.start import ARYAN_PICS
 from pyrogram import filters, types
-from pyrogram.types import (
-    CallbackQuery,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    Message,
-    InputMediaPhoto,
-    InputMediaVideo,
-)
 from pyrogram.types import InlineKeyboardMarkup, Message, InputMediaPhoto
 
 from ARYAN import app
@@ -85,7 +77,6 @@ async def help_com_group(client, message: Message, _):
 
 
 @app.on_callback_query(filters.regex("help_callback") & ~BANNED_USERS)
-@app.on_callback_query(filters.regex("help_callback") & ~BANNED_USERS)
 @languageCB
 async def helper_cb(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
@@ -106,75 +97,33 @@ async def helper_cb(client, CallbackQuery, _):
     except:
         pass
     if cb == "hb1":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_1),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_1, reply_markup=keyboard)
     elif cb == "hb2":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_2),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_2, reply_markup=keyboard)
     elif cb == "hb3":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_3),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_3, reply_markup=keyboard)
     elif cb == "hb4":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_4),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_4, reply_markup=keyboard)
     elif cb == "hb5":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_5),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_5, reply_markup=keyboard)
     elif cb == "hb6":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_6),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_6, reply_markup=keyboard)
     elif cb == "hb7":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_7),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_7, reply_markup=keyboard)
     elif cb == "hb8":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_8),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_8, reply_markup=keyboard)
     elif cb == "hb9":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_9),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_9, reply_markup=keyboard)
     elif cb == "hb10":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_10),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_10, reply_markup=keyboard)
     elif cb == "hb11":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_11),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_11, reply_markup=keyboard)
     elif cb == "hb12":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_12),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_12, reply_markup=keyboard)
     elif cb == "hb13":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_13),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_13, reply_markup=keyboard)
     elif cb == "hb15":
-        await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_15),
-        reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyboard)
     
 @app.on_callback_query(filters.regex("aryan") & ~BANNED_USERS)
 @languageCB
