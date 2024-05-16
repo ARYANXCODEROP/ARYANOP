@@ -96,11 +96,11 @@ async def settings_cb(client, CallbackQuery, _):
     except:
         pass
     buttons = setting_markup(_)
-    return await CallbackQuery.edit_message_text(
-        _["setting_1"].format(
-            CallbackQuery.message.chat.title,
-            CallbackQuery.message.chat.id,
-        ),
+    return await CallbackQuery.edit_message_media(
+            InputMediaPhoto(random.choice(ARYAN_PICS),
+                caption=_["setting_1"].format(
+                    CallbackQuery.message.chat.title, CallbackQuery.message.chat.id),
+            ),
         reply_markup=InlineKeyboardMarkup(buttons),
     )
 
