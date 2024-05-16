@@ -2,6 +2,14 @@ from typing import Union
 import random
 from ARYAN.plugins.bot.start import ARYAN_PICS
 from pyrogram import filters, types
+from pyrogram.types import (
+    CallbackQuery,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+    InputMediaPhoto,
+    InputMediaVideo,
+)
 from pyrogram.types import InlineKeyboardMarkup, Message, InputMediaPhoto
 
 from ARYAN import app
@@ -27,7 +35,7 @@ async def helper_private(client: app, update: Union[types.Message, types.Callbac
         language = await get_lang(chat_id)
         _ = get_string(language)
         keyboard = first_page(_)
-        await update edit_message_media(InputMediaPhoto(ARYAN_PICS),
+        await update.edit_message_media(InputMediaPhoto(ARYAN_PICS),
             caption=_["help_1"].format(SUPPORT_CHAT),
             reply_markup=keyboard,
          )
