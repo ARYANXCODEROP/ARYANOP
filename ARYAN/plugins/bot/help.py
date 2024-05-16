@@ -107,7 +107,7 @@ async def helper_cb(client, CallbackQuery, _):
     if cb == "hb1":
         await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_1,
+               caption=helpers.HELP_1),
         reply_markup=keyboard)
     elif cb == "hb2":
         await CallbackQuery.edit_message_text(helpers.HELP_2, reply_markup=keyboard)
