@@ -5,6 +5,14 @@ from pyrogram import filters, types
 from pyrogram.types import InlineKeyboardMarkup, Message, InputMediaPhoto
 
 from ARYAN import app
+from pyrogram.types import (
+    CallbackQuery,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+    InputMediaPhoto,
+    InputMediaVideo,
+)
 from ARYAN.utils import first_page, second_page
 from ARYAN.utils.database import get_lang
 from ARYAN.utils.decorators.language import LanguageStart, languageCB
