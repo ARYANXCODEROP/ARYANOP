@@ -96,10 +96,9 @@ async def helper_cb(client, CallbackQuery, _):
                    "ᴛʜɪs ʙᴜᴛᴛᴏɴ ᴏɴʟʏ ғᴏʀ sᴜᴅᴏᴇʀs\n\n\nᴄʜᴀʟ ʜᴀᴀᴛ ʙʜᴏsᴅɪᴋᴇ.", show_alert=True
             )
         else:
-            await CallbackQuery.edit_message_media(
-     InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=helpers.HELP_14),
-        reply_markup=keyboard)
+            await CallbackQuery.edit_message_text(
+                helpers.HELP_14, reply_markup=keyboard
+            )
             return await CallbackQuery.answer()
     try:
         await CallbackQuery.answer()
