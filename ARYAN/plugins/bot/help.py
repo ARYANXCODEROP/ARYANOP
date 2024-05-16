@@ -27,7 +27,7 @@ async def helper_private(client: app, update: Union[types.Message, types.Callbac
         language = await get_lang(chat_id)
         _ = get_string(language)
         keyboard = first_page(_)
-        await update message.reply_photo(random.choice(ARYAN_PICS),
+        await update edit_message_media(InputMediaPhoto(ARYAN_PICS),
             caption=_["help_1"].format(SUPPORT_CHAT),
             reply_markup=keyboard,
          )
