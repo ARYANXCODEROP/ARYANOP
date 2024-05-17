@@ -65,14 +65,14 @@ async def gib_repo(client, CallbackQuery, _):
 @languageCB
 async def gib_repo(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
-     InputMediaVideo("https://telegra.ph/file/fcfdbf7f22a2898d207cd.mp4", has_spoiler=True, caption="<b><u>ʟᴜɴᴅ ʟᴇʟᴇ ʙʜᴏsᴅɪᴋᴇ</b></u>"),
+     InputMediaVideo("https://telegra.ph/file/fcfdbf7f22a2898d207cd.mp4", has_spoiler=True, caption="ʟᴜɴᴅ ʟᴇʟᴇ ʙʜᴏsᴅɪᴋᴇ"),
         reply_markup=source1_markup(_))
 
 @app.on_callback_query(filters.regex("love") & ~BANNED_USERS)
 @languageCB
 async def gib_repo(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
-     InputMediaVideo("https://telegra.ph/file/0a7173053d1d1fab51173.mp4", has_spoiler=True, caption="<b><u>❣️✨sᴘʀᴇᴀᴅɪɴɢ ʟᴏᴠᴇ❣️🫶</b></u>"),
+     InputMediaVideo("https://telegra.ph/file/0a7173053d1d1fab51173.mp4", has_spoiler=True, caption="sᴘʀᴇᴀᴅɪɴɢ ʟᴏᴠᴇ❣️🫶."),
         reply_markup=source2_markup(_))
 
 @app.on_callback_query(filters.regex("lood") & ~BANNED_USERS)
