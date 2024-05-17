@@ -111,9 +111,7 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
         )
         
 
-@app.on_callback_query(
-    filters.regex("settings_helper") & ~BANNED_USERS
-)
+@app.on_callback_query(filters.regex("settings_helper") & ~BANNED_USERS)
 @languageCB
 async def settings_cb(client, CallbackQuery, _):
     try:
@@ -123,8 +121,9 @@ async def settings_cb(client, CallbackQuery, _):
     buttons = setting_markup(_)
     return await CallbackQuery.edit_message_text(
         _["setting_1"].format(
-            CallbackQuery.message.chat.title,
+            app.mention,
             CallbackQuery.message.chat.id,
+            CallbackQuery.message.chat.title,
         ),
         reply_markup=InlineKeyboardMarkup(buttons),
     )
