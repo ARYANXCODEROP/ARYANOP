@@ -84,25 +84,6 @@ async def gib_repo(client, CallbackQuery, _):
                     CallbackQuery.from_user.mention, app.mention),
             ),
         reply_markup=lood_markup(_))
-    
-
-@app.on_callback_query(
-    filters.regex("settings_helper") & ~BANNED_USERS
-)
-@languageCB
-async def settings_cb(client, CallbackQuery, _):
-    try:
-        await CallbackQuery.answer(_["set_cb_5"])
-    except:
-        pass
-    buttons = setting_markup(_)
-    return await CallbackQuery.edit_message_text(
-        _["setting_1"].format(
-            CallbackQuery.message.chat.title,
-            CallbackQuery.message.chat.id,
-        ),
-        reply_markup=InlineKeyboardMarkup(buttons),
-    )
 
 
 @app.on_callback_query(filters.regex("settingsback_helper") & ~BANNED_USERS)
@@ -128,6 +109,25 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
         return await CallbackQuery.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(buttons)
         )
+        
+
+@app.on_callback_query(
+    filters.regex("settings_helper") & ~BANNED_USERS
+)
+@languageCB
+async def settings_cb(client, CallbackQuery, _):
+    try:
+        await CallbackQuery.answer(_["set_cb_5"])
+    except:
+        pass
+    buttons = setting_markup(_)
+    return await CallbackQuery.edit_message_text(
+        _["setting_1"].format(
+            CallbackQuery.message.chat.title,
+            CallbackQuery.message.chat.id,
+        ),
+        reply_markup=InlineKeyboardMarkup(buttons),
+    )
 
 
 @app.on_callback_query(
