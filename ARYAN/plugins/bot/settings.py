@@ -39,7 +39,7 @@ from ARYAN.utils.inline.settings import (
 from ARYAN.utils.inline import source_markup, lood_markup, source1_markup, source2_markup
 from ARYAN.utils.inline.start import private_panel
 from ARYAN.plugins.bot.start import ARYAN_PICS
-from config import BANNED_USERS, OWNER_ID, MUSIC_BOT_NAME, START_IMG_URL
+from config import BANNED_USERS, OWNER_ID, MUSIC_BOT_NAME, START_IMG_URL, SUPPORT_CHAT
 
 
 @app.on_message(
@@ -81,7 +81,7 @@ async def gib_repo(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
                caption=_["text_1"].format(
-                    CallbackQuery.from_user.mention, app.mention),
+                    CallbackQuery.from_user.mention, app.mention, SUPPORT_CHAT),
             ),
         reply_markup=lood_markup(_))
 
