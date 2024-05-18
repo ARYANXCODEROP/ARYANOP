@@ -12,6 +12,7 @@ from pyrogram.types import (
 )
 
 from ARYAN import app
+import config
 from ARYAN.utils.database import (
     add_nonadmin_chat,
     get_authuser,
@@ -80,8 +81,8 @@ async def gib_repo(client, CallbackQuery, _):
 async def gib_repo(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=_["text_1"].format(SUPPORT_CHAT,
-                    CallbackQuery.from_user.mention, app.mention),
+               caption=_["text_1"].format(
+                    CallbackQuery.from_user.mention, app.mention, config.SUPPORT_CHAT),
             ),
         reply_markup=lood_markup(_))
 
