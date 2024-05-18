@@ -80,8 +80,8 @@ async def gib_repo(client, CallbackQuery, _):
 async def gib_repo(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=_["text_1"].format(
-                    CallbackQuery.from_user.mention, app.mention, SUPPORT_CHAT),
+               caption=_["text_1"].format(SUPPORT_CHAT,
+                    CallbackQuery.from_user.mention, app.mention),
             ),
         reply_markup=lood_markup(_))
 
