@@ -6,6 +6,8 @@ from pyrogram.types import Message
 
 @app.on_edited_message(filters.group & ~filters.me)
 async def delete_edited_messages(client, edited_message):
+    delete_message = f"{message.from_user.mention} ᴍᴇssᴀɢᴇ ᴇᴅɪᴛ ᴍᴀᴛ ᴋᴀʀᴏ"
+    await message.reply_text(warning_message)
     await edited_message.delete()
 
 
