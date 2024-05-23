@@ -18,7 +18,7 @@ start_txt = """
 async def start(_, msg):
     buttons = [
         [ 
-          InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url=f"HTTPS://T.ME/ARYANXCODEROP/ARYANOP")
+          InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url=f"HTTPS://GITHUB.COM/ARYANXCODEROP/ARYANOP")
         ],
         ]
     
