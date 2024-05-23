@@ -2,13 +2,13 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from ARYAN import app
 from ARYAN.utils.errors import capture_err
-import httpx 
-from ARYAN.plugins.bot.start import ARYAN_PICS
-import random
+import httpx
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 start_txt = """
+
 ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ
+
 """
 
 
