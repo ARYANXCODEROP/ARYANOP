@@ -4,7 +4,7 @@ from ARYAN import app
 
 import config
 
-from config import SUPPORT_CHAT
+from config import SUPPORT_CHAT, SUPPORT_CHANNEL
 
 
 def botplaylist_markup(_):
@@ -98,21 +98,17 @@ def lood_markup(_):
         [
                 [
                     InlineKeyboardButton(
-                        text="ᴄʜᴀɴɴᴇʟ", url="https://t.me/STATUSDAIRY2"
+                        text="ᴄʜᴀɴɴᴇʟ", url=SUPPORT_CHANNEL,
                     ),
 
                     InlineKeyboardButton(
-                        text="ᴍᴜsɪᴄ ɢʀᴏᴜᴘ", url="https://t.me/vohmusic"
+                        text="sᴜᴘᴘᴏʀᴛ", url=SUPPORT_CHAT,
                     ),
                     
                 ],
                 [
                     InlineKeyboardButton(
                         text="ᴅᴇᴠᴇʟᴏᴘᴇʀ", user_id=config.OWNER_ID
-                    ),
-
-                    InlineKeyboardButton(
-                        text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/VOICEOFHEART0"
                     ),
                     
                 ],
