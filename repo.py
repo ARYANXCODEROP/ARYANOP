@@ -3,6 +3,8 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from ARYAN import app
 from ARYAN.utils.errors import capture_err
 import httpx 
+from ARYAN.plugins.bot.start import ARYAN_PICS
+import random
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 start_txt = """
@@ -16,14 +18,13 @@ start_txt = """
 async def start(_, msg):
     buttons = [
         [ 
-          InlineKeyboardButton("𝗔𝗗𝗗 𝗠𝗘", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+          InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url=f"HTTPS://T.ME/ARYANXCODEROP/ARYANOP")
         ],
         ]
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
-    await msg.reply_photo(
-        photo="https://telegra.ph/file/faa1f3ad7116e33d9f402.jpg",
+    await msg.reply_photo(random.choice(ARYAN_PICS),
         caption=start_txt,
         reply_markup=reply_markup
     )
