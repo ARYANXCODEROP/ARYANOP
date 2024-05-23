@@ -108,14 +108,12 @@ def lood_markup(_):
                 ],
                 [
                     InlineKeyboardButton(
+                        text="ʙᴀᴄᴋ", callback_data=f"settingsback_helper"
+                    ),
+                    InlineKeyboardButton(
                         text="ᴅᴇᴠᴇʟᴏᴘᴇʀ", user_id=config.OWNER_ID
                     ),
                     
-                ],
-                [
-                    InlineKeyboardButton(
-                        text="ʙᴀᴄᴋ", callback_data=f"settingsback_helper"
-                    )
                 ],
             ]
     )
