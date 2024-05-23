@@ -2,14 +2,12 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from ARYAN import app
 from ARYAN.utils.errors import capture_err
-import httpx
+import httpx 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-start_txt = """
-
+start_txt = """**
 ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ
-
-"""
+**"""
 
 
 
@@ -17,10 +15,10 @@ start_txt = """
 @app.on_message(filters.command("repo"))
 async def start(_, msg):
     buttons = [
-        [ 
-          InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url=f"HTTPS://GITHUB.COM/ARYANXCODEROP/ARYANOP")
-        ],
-        ]
+        [
+              InlineKeyboardButton("︎sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url=f"https://github.com/ARYANXCODEROP/ARYANOP"),
+              ],
+               ]
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
@@ -29,3 +27,6 @@ async def start(_, msg):
         caption=start_txt,
         reply_markup=reply_markup
     )
+ 
+   
+# --------------
