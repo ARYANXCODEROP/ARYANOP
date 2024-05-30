@@ -202,5 +202,29 @@ async def first_pagee(client, CallbackQuery, _):
     except:
         return
 
+@app.on_callback_query(filters.regex("madmax") & ~BANNED_USERS)
+@languageCB
+async def second_pagexx(client, CallbackQuery, _):
+    menu_next = first_page(_)
+    try:
+        await CallbackQuery.edit_message_media(
+     InputMediaPhoto(random.choice(ARYAN_PICS),
+               caption=_["help_1"].format(SUPPORT_CHAT),
+                    ), reply_markup=menu_next)
+        return
+    except:
+        return
 
-# Do not try to change whole code, just add or remove what you want.
+@app.on_callback_query(filters.regex("tgop") & ~BANNED_USERS)
+@languageCB
+async def second_pagee(client, CallbackQuery, _):
+    menu_next = first_page(_)
+    try:
+        await CallbackQuery.edit_message_media(
+     InputMediaPhoto(random.choice(ARYAN_PICS),
+               caption=_["help_1"].format(SUPPORT_CHAT),
+                    ), reply_markup=menu_next)
+        return
+    except:
+        return
+
