@@ -196,7 +196,7 @@ async def helper(client, CallbackQuery, _):
      InputMediaPhoto(random.choice(ARYAN_PICS),
                caption=_["help_1"].format(SUPPORT_CHAT),
             ),
-        reply_markup=aryanpage)
+        reply_markup=emmapage)
     
 @app.on_callback_query(filters.regex("aryan") & ~BANNED_USERS)
 @languageCB
