@@ -196,7 +196,8 @@ async def first_pagee(client, CallbackQuery, _):
     try:
         await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
-               caption=_["help_1"].format(SUPPORT_CHAT), reply_markup=menu_next)
+               caption=_["help_1"].format(SUPPORT_CHAT),
+                    ), reply_markup=menu_next)
         return
     except:
         return
