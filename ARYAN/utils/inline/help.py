@@ -43,8 +43,8 @@ def second_page(_):
 def help_back_markup(_):
 	upl = InlineKeyboardMarkup([
 		[
-			InlineKeyboardButton(text=_["BACK_BUTTON"], callback_data=f"settings_back_helper"),
-		        InlineKeyboardButton(text=_["S_B_2"], callback_data="lood"),
+			InlineKeyboardButton(text=_["BACK_BUTTON"], callback_data=f"amhelper"),
+		        InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
 		
 		
 		],
