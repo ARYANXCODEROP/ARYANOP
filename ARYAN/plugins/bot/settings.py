@@ -56,7 +56,7 @@ async def settings_mar(client, message: Message, _):
 
 @app.on_callback_query(filters.regex("repoxlove") & ~BANNED_USERS)
 @languageCB
-async def gib_repo(client, CallbackQuery, _):
+async def love_repo(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
                caption=_["repo_1"]),
@@ -71,14 +71,14 @@ async def gib_repo(client, CallbackQuery, _):
 
 @app.on_callback_query(filters.regex("love") & ~BANNED_USERS)
 @languageCB
-async def gib_repo(client, CallbackQuery, _):
+async def love(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
      InputMediaVideo("https://telegra.ph/file/0a7173053d1d1fab51173.mp4", has_spoiler=True, caption="sᴘʀᴇᴀᴅɪɴɢ ʟᴏᴠᴇ❣️🫶."),
         reply_markup=source2_markup(_))
 
 @app.on_callback_query(filters.regex("lood") & ~BANNED_USERS)
 @languageCB
-async def gib_repo(client, CallbackQuery, _):
+async def support(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
                caption=_["text_1"].format(
