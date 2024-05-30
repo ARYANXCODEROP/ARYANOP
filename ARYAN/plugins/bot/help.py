@@ -16,7 +16,7 @@ from pyrogram.types import (
 from ARYAN.utils import first_page, second_page
 from ARYAN.utils.database import get_lang
 from ARYAN.utils.decorators.language import LanguageStart, languageCB
-from ARYAN.utils.inline.help import help_back_markup, private_help_panel
+from ARYAN.utils.inline.help import help_back_markup, private_help_panel, help_back2_markup
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
 from strings import get_string, helpers
 from ARYAN.misc import SUDOERS
@@ -90,6 +90,7 @@ async def helper_cb(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
     keyboard = help_back_markup(_)
+    2nd_keyboard = help_back2_markup(_)
     if cb == "hb14":
         if CallbackQuery.from_user.id not in SUDOERS:
             return await CallbackQuery.answer(
@@ -99,7 +100,7 @@ async def helper_cb(client, CallbackQuery, _):
             await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
                caption=helpers.HELP_14),
-        reply_markup=keyboard)
+        reply_markup=2nd_keyboard)
             return await CallbackQuery.answer()
     try:
         await CallbackQuery.answer()
@@ -169,12 +170,12 @@ async def helper_cb(client, CallbackQuery, _):
         await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
                caption=helpers.HELP_13),
-        reply_markup=keyboard)
+        reply_markup=2nd_keyboard)
     elif cb == "hb15":
         await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
                caption=helpers.HELP_15),
-        reply_markup=keyboard)
+        reply_markup=2nd_keyboard)
 
 
 @app.on_callback_query(filters.regex("amhelper") & ~BANNED_USERS)
