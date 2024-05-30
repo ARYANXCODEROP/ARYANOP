@@ -52,6 +52,18 @@ def help_back_markup(_):
 		  )
 	return upl
 
+def help_back2_markup(_):
+	upl = InlineKeyboardMarkup([
+		[
+			InlineKeyboardButton(text=_["BACK_BUTTON"], callback_data=f"emmahelper"),
+		        InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
+		
+		
+		],
+	         ]
+		  )
+	return upl
+
 
 # Ease of access 
 def private_help_panel(_):
