@@ -90,7 +90,7 @@ async def helper_cb(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
     keyboard = help_back_markup(_)
-    2nd_keyboard = help_back2_markup(_)
+    keyboard2 = help_back2_markup(_)
     if cb == "hb14":
         if CallbackQuery.from_user.id not in SUDOERS:
             return await CallbackQuery.answer(
@@ -100,7 +100,7 @@ async def helper_cb(client, CallbackQuery, _):
             await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
                caption=helpers.HELP_14),
-        reply_markup=2nd_keyboard)
+        reply_markup=keyboard2)
             return await CallbackQuery.answer()
     try:
         await CallbackQuery.answer()
@@ -170,12 +170,12 @@ async def helper_cb(client, CallbackQuery, _):
         await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
                caption=helpers.HELP_13),
-        reply_markup=2nd_keyboard)
+        reply_markup=keyboard2)
     elif cb == "hb15":
         await CallbackQuery.edit_message_media(
      InputMediaPhoto(random.choice(ARYAN_PICS),
                caption=helpers.HELP_15),
-        reply_markup=2nd_keyboard)
+        reply_markup=keyboard2)
 
 
 @app.on_callback_query(filters.regex("amhelper") & ~BANNED_USERS)
