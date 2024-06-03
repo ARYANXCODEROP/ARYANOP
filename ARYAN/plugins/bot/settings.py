@@ -88,14 +88,16 @@ async def support(client, CallbackQuery, _):
             ),
         reply_markup=lood_markup(_))
 
+
 @app.on_callback_query(filters.regex("donate") & ~BANNED_USERS)
 @languageCB
 async def donate(client, CallbackQuery, _):
+    donate_keyboard = source2_markup(_)
     await CallbackQuery.edit_message_media(
-     InputMediaphoto(random.choice(DONATE),
-                     caption=_["donate_1"]),
-        reply_markup=source1_markup(_))
-
+     InputMediaPhoto(random.choice(DONATE),
+               caption=_["donate_1"],
+               ),
+        reply_markup=donate_keyboard)
 
 @app.on_callback_query(filters.regex("settingsback_helper") & ~BANNED_USERS)
 @languageCB
