@@ -93,7 +93,7 @@ async def support(client, CallbackQuery, _):
 async def donate(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
      InputMediaphoto(random.choice(DONATE),
-                     caption="<b><u>Fᴇᴇʟ Fʀᴇᴇ ᴛᴏ Dᴏɴᴀᴛᴇ</b></u>\n\nUᴘɪ ID: <b><u>teammadmaxop@ybl</b></u>"),
+                     caption=_["donate_1"]),
         reply_markup=source1_markup(_))
 
 
