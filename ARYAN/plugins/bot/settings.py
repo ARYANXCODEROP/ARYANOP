@@ -11,7 +11,7 @@ from pyrogram.types import (
     InputMediaVideo,
 )
 
-from ARYAN import app, PAY
+from ARYAN import app
 import config
 from ARYAN.utils.database import (
     add_nonadmin_chat,
