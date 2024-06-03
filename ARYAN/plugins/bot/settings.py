@@ -11,7 +11,7 @@ from pyrogram.types import (
     InputMediaVideo,
 )
 
-from ARYAN import app
+from ARYAN import app, PAY
 import config
 from ARYAN.utils.database import (
     add_nonadmin_chat,
@@ -86,6 +86,14 @@ async def support(client, CallbackQuery, _):
                ),
             ),
         reply_markup=lood_markup(_))
+
+@app.on_callback_query(filters.regex("donate") & ~BANNED_USERS)
+@languageCB
+async def donate(client, CallbackQuery, _):
+    await CallbackQuery.edit_message_media(
+     InputMediaphoto(media=PAY,
+                     caption="<b><u>Fᴇᴇʟ Fʀᴇᴇ ᴛᴏ Dᴏɴᴀᴛᴇ</b></u>\n\nUᴘɪ ID: <b><u>teammadmaxop@ybl</b></u>"),
+        reply_markup=source1_markup(_))
 
 
 @app.on_callback_query(filters.regex("settingsback_helper") & ~BANNED_USERS)
