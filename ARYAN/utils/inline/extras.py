@@ -80,13 +80,16 @@ def source_markup(_):
                         text="ʀᴇᴘᴏ", callback_data=f"gib_source"
                     ),
                     InlineKeyboardButton(
-                        text="ʟᴏᴠᴇ", callback_data=f"love"
+                        text="ᴅᴏɴᴀᴛᴇ", callback_data=f"donate"
                     ),
            ],
                [ 
                 InlineKeyboardButton(
                         text="ʙᴀᴄᴋ", callback_data=f"settingsback_helper"
                 ),
+                   InlineKeyboardButton(
+                        text="ʟᴏᴠᴇ", callback_data=f"love"
+                    ),
            ],
                
            ],
