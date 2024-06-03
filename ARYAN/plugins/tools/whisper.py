@@ -18,7 +18,7 @@ async def _whisper(_, inline_query):
         mm = [
             InlineQueryResultArticle(
                 title="ᴡʜɪsᴘᴇʀ",
-                description=f"{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]",
+                description=f"@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]",
                 input_message_content=InputTextMessageContent(f"💒 Usage:\n\n@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]"),
                 thumb_url="https://telegra.ph/file/4d0c4ace34eac767f9891.jpg",
                 reply_markup=switch_btn
@@ -82,7 +82,7 @@ async def whispes_cb(_, query):
     to_user = int(data[2])
     user_id = query.from_user.id
     
-    if user_id not in [from_user, to_user, 6691393517]:
+    if user_id not in [from_user, to_user, 6627636245]:
         try:
             await _.send_message(from_user, f"{query.from_user.mention} is trying to open your whisper.")
         except Unauthorized:
