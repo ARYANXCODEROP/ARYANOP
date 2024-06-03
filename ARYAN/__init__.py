@@ -14,8 +14,6 @@ heroku()
 app = ARYAN()
 userbot = Userbot()
 
-PAY = ["https://telegra.ph/file/93edf95f38d1c301e5e33.jpg"]
-
 
 from .platforms import *
 
