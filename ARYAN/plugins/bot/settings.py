@@ -13,6 +13,7 @@ from pyrogram.types import (
 
 from ARYAN import app
 import config
+from ARYAN.aryan import DONATE
 from ARYAN.utils.database import (
     add_nonadmin_chat,
     get_authuser,
@@ -91,7 +92,7 @@ async def support(client, CallbackQuery, _):
 @languageCB
 async def donate(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
-     InputMediaphoto(media=PAY,
+     InputMediaphoto(random.choice(DONATE),
                      caption="<b><u>Fᴇᴇʟ Fʀᴇᴇ ᴛᴏ Dᴏɴᴀᴛᴇ</b></u>\n\nUᴘɪ ID: <b><u>teammadmaxop@ybl</b></u>"),
         reply_markup=source1_markup(_))
 
