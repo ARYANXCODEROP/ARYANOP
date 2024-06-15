@@ -67,7 +67,7 @@ async def love_repo(client, CallbackQuery, _):
 @languageCB
 async def gib_repo(client, CallbackQuery, _):
    source = source1_markup(_)
-    await CallbackQuery.edit_message_media(  InputMediaVideo("https://telegra.ph/file/fcfdbf7f22a2898d207cd.mp4", has_spoiler=True, caption="ʟᴜɴᴅ ʟᴇʟᴇ ʙʜᴏsᴅɪᴋᴇ"),
+    await CallbackQuery.edit_message_media(InputMediaVideo("https://telegra.ph/file/fcfdbf7f22a2898d207cd.mp4", has_spoiler=True, caption="ʟᴜɴᴅ ʟᴇʟᴇ ʙʜᴏsᴅɪᴋᴇ"),
         reply_markup=source)
 
 @app.on_callback_query(filters.regex("love") & ~BANNED_USERS)
