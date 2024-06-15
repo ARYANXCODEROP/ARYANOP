@@ -6,23 +6,23 @@ from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message, Inlin
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from AnonXMusic.utils.database import is_served_user
-from AnonXMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
-from AnonXMusic.core.call import Anony
-from AnonXMusic.utils import seconds_to_min, time_to_seconds
-from AnonXMusic.utils.channelplay import get_channeplayCB
-from AnonXMusic.utils.decorators.language import languageCB
-from AnonXMusic.utils.decorators.play import PlayWrapper
-from AnonXMusic.utils.formatters import formats
-from AnonXMusic.utils.inline import (
+from ARYAN.utils.database import is_served_user
+from ARYAN import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
+from ARYAN.core.call import ARYAN
+from ARYAN.utils import seconds_to_min, time_to_seconds
+from ARYAN.utils.channelplay import get_channeplayCB
+from ARYAN.utils.decorators.language import languageCB
+from ARYAN.utils.decorators.play import PlayWrapper
+from ARYAN.utils.formatters import formats
+from ARYAN.utils.inline import (
     botplaylist_markup,
     livestream_markup,
     playlist_markup,
     slider_markup,
     track_markup,
 )
-from AnonXMusic.utils.logger import play_logs
-from AnonXMusic.utils.stream.stream import stream
+from ARYAN.utils.logger import play_logs
+from ARYAN.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
 
 
@@ -67,7 +67,7 @@ async def play_commnd(
     plist_type = None
     spotify = None
     user_id = message.from_user.id
-    user_name = message.from_user.first_name
+    user_name = message.from_user.mention
     audio_telegram = (
         (message.reply_to_message.audio or message.reply_to_message.voice)
         if message.reply_to_message
@@ -294,7 +294,7 @@ async def play_commnd(
             return await mystic.delete()
         else:
             try:
-                await DAXX.stream_call(url)
+                await ARYAN.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(_["black_9"])
                 return await app.send_message(
@@ -507,7 +507,7 @@ async def play_music(client, CallbackQuery, _):
     return await mystic.delete()
 
 
-@app.on_callback_query(filters.regex("DAXXmousAdmin") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("AnonymousAdmin") & ~BANNED_USERS)
 async def DAXXmous_check(client, CallbackQuery):
     try:
         await CallbackQuery.answer(
@@ -518,7 +518,7 @@ async def DAXXmous_check(client, CallbackQuery):
         pass
 
 
-@app.on_callback_query(filters.regex("DAXXPlaylists") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("ARYANPlaylists") & ~BANNED_USERS)
 @languageCB
 async def play_playlists_command(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
