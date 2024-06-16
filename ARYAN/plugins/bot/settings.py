@@ -1,6 +1,8 @@
 from pyrogram import filters
 import random
 from pyrogram.enums import ChatType
+from time import time, strftime, gmtime
+from pyrogram import __version__ as version 
 from pyrogram.errors import MessageNotModified
 from pyrogram.types import (
     CallbackQuery,
@@ -86,6 +88,20 @@ async def support(client, CallbackQuery, _):
                ),
             ),
         reply_markup=lood_markup(_))
+
+@app.on_callback_query(filters.regex("bot_info_data"))
+async def show_bot_info(c: app, q: CallbackQuery):
+    start = time()
+    x = await c.send_message(q.message.chat.id, "Pinging..")
+    delta_ping = time() - start
+    await x.delete()
+    txt = f"""
+    ❣️ Pɪɴɢ: {delta_ping * 1000:.3f} ms   
+    🐍 Pʏᴛʜᴏɴ Vᴇʀsɪᴏɴ: 3.10.4
+    🔥 Pʏʀᴏɢʀᴀᴍ Vᴇʀsɪᴏɴ: {version}
+    """
+    await q.answer(txt, show_alert=True)
+    return
 
 @app.on_callback_query(filters.regex("settingsback_helper") & ~BANNED_USERS)
 @languageCB
