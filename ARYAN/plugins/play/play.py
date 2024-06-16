@@ -45,7 +45,7 @@ async def play_commnd(
     fplay,
 ):
     if not await is_served_user(message.from_user.id):
-        await message.reply_text(_["verify_2"].format(message.from_user.mention)),
+        await message.reply_text(_["verify_2"].format(message.from_user.mention),
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
