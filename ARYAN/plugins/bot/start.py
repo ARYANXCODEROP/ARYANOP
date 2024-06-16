@@ -83,7 +83,7 @@ async def start_pm(client, message: Message, _):
                 )
             return
         if name == "verify":
-            await message.reply_text(_["verify_1"].format(message.from_user.mention, app.mention, UP, DISK, CPU, RAM,served_users,served_chats))
+            await message.reply_text(_["verify_1"].format(message.from_user.mention, app.mention))
             if await is_on_off(2):
                 sender_id = message.from_user.id
                 sender_name = message.from_user.mention
