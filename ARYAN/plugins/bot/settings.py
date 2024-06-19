@@ -63,13 +63,15 @@ async def love_repo(client, CallbackQuery, _):
      InputMediaPhoto(random.choice(ARYAN_PICS),
                caption=_["repo_1"]),
         reply_markup=source_markup(_))
+    
 
-@app.on_callback_query(filters.regex("gib_source") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("love") & ~BANNED_USERS)
 @languageCB
-async def gib_repo(client, CallbackQuery, _):
+async def love(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
- InputMediaVideo("https://telegra.ph/file/13f9147896509734c8498.mp4", has_spoiler=True, caption="ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʀᴇᴘᴏ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ"),
+ InputMediaVideo("https://telegra.ph/file/13f9147896509734c8498.mp4", has_spoiler=True, caption="ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʀᴇᴘᴏ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ."),
         reply_markup=source1_markup(_))
+    
 
 @app.on_callback_query(filters.regex("love") & ~BANNED_USERS)
 @languageCB
