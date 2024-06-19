@@ -126,10 +126,10 @@ def source1_markup(_):
                 InlineKeyboardButton(
                         text="◁", callback_data=f"repoxlove"
                 ),
-           [
-              InlineKeyboardButton("︎ʀᴇᴘᴏ", url=f"https://github.com/ARYANXCODEROP/ARYANOP"),
-              ],
-           ],
+                  InlineKeyboardButton(
+                        text="ʀᴇᴘᴏ", url=f"https://github.com/ARYANXCODEROP/ARYANOP"    
+                ),
+            ],
         ]
     )
     return upl
