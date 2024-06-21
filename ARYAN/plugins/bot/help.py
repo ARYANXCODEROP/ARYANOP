@@ -176,6 +176,11 @@ async def helper_cb(client, CallbackQuery, _):
      InputMediaPhoto(random.choice(ARYAN_PICS),
                caption=helpers.HELP_15),
         reply_markup=keyboard2)
+    elif cb == "hb16":
+        await CallbackQuery.edit_message_media(
+     InputMediaPhoto(random.choice(ARYAN_PICS),
+               caption=helpers.HELP_16),
+        reply_markup=keyboard2)
 
 
 @app.on_callback_query(filters.regex("amhelper") & ~BANNED_USERS)
