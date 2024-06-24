@@ -7,13 +7,14 @@ import config
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 promo_txt = """
-<b><u>💰 Dᴏɴᴀᴛᴇ ғᴏʀ ᴘᴀɪᴅ ᴘʀᴏᴍᴏᴛɪᴏɴ 💸</b></u>\nᴜᴘɪ ɪᴅ : <b><u>teammadmaxop@axl</b></u>
+<b><u>💰 Dᴏɴᴀᴛᴇ ғᴏʀ ᴘᴀɪᴅ ᴘʀᴏᴍᴏᴛɪᴏɴ 💸</b></u>\n\n\nᴜᴘɪ ɪᴅ : <b><u>teammadmaxop@axl</b></u>
 """
 
 
 
 
-@app.on_message(filters.command("promo"))
+
+@app.on_message(filters.command(["romo","romo","promo"], prefixes=["p", "P","/"])) 
 async def start(_, msg):
     buttons = [
         [
